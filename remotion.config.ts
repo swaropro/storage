@@ -8,3 +8,8 @@ import { Config } from "@remotion/cli/config";
 Config.setRspack(true);
 Config.setVideoImageFormat("jpeg");
 Config.setOverwriteOutput(true);
+
+// Use the Chromium already installed in this environment (remotion.media download is blocked by the network)
+Config.setBrowserExecutable(
+  "/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell",
+);

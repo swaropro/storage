@@ -1,11 +1,14 @@
-import { AbsoluteFill, Sequence, Track, useCurrentFrame, useVideoConfig } from "remotion";
+import { Audio } from "@remotion/media";
+import { AbsoluteFill, Sequence, staticFile, Track, useCurrentFrame, useVideoConfig } from "remotion";
 import { Background } from "./Background";
 import { Captions } from "./Captions";
 import { Hud } from "./Hud";
 import { Arrivo, Gancio, RadioScene, Regola, Routine, Registro, Scelta } from "./Scenes";
 import { buildCaptions } from "./script";
+import { EP1_VOICE, ep1VoiceCaptions } from "./voice";
 
-const captions = buildCaptions();
+// Sottotitoli a tempo con la voce se ci sono, altrimenti tempi stimati dal copione.
+const captions = ep1VoiceCaptions.length > 0 ? ep1VoiceCaptions : buildCaptions();
 
 // Negli ultimi 1,5 secondi la luce del faro tremola: lascia il dubbio.
 const FlickeringBackground = () => {
@@ -55,6 +58,7 @@ export const IlFaroEp1 = () => {
           <Scelta />
         </Sequence>
       </Track>
+      {EP1_VOICE ? <Audio name="Voce narrante" src={staticFile(EP1_VOICE)} /> : null}
       <Hud episode={1} />
       <Captions captions={captions} top={1200} />
     </AbsoluteFill>

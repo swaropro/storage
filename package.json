@@ -32,7 +32,8 @@
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "captions": "node scripts/make-captions.mts"
   },
   "allowScripts": {
     "esbuild": false

@@ -75,7 +75,7 @@ export const Gancio = () => (
     <Big color={palette.green} size={170} delay={0.2}>
       €1.000.000
     </Big>
-    <Big color={palette.gold} size={110} delay={1.4}>
+    <Big color={palette.gold} size={110} delay={2.1}>
       40 NOTTI
     </Big>
   </Column>
@@ -86,8 +86,8 @@ export const Regola = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const card = usePop(0.1, 200);
-  const stamp = usePop(7.6, 9);
-  const sign = interpolate(frame, [4.5 * fps, 6.2 * fps], [1, 0], {
+  const stamp = usePop(7.35, 9);
+  const sign = interpolate(frame, [1.9 * fps, 3.3 * fps], [1, 0], {
     ...clamp,
     easing: Easing.bezier(0.45, 0, 0.55, 1),
   });
@@ -126,8 +126,8 @@ export const Regola = () => {
         </div>
         {row("Durata: 40 notti", 0.8)}
         {row("Compenso: € 1.000.000", 1.4)}
-        {row("Regola n. 1:", 3.2, true)}
-        {row("la luce non si spegne.", 3.6, true)}
+        {row("Regola n. 1:", 4.0, true)}
+        {row("la luce non si spegne.", 5.1, true)}
         <svg width={360} height={110} style={{ marginTop: 10 }}>
           <path
             d="M 10 70 C 40 10, 70 110, 100 50 S 150 20, 170 70 S 230 90, 250 40 S 320 60, 350 55"
@@ -215,7 +215,7 @@ const Chip = ({
 const Boat = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const t = interpolate(frame, [0, 9 * fps], [0, 1], clamp);
+  const t = interpolate(frame, [0, 9.5 * fps], [0, 1], clamp);
   return (
     <svg
       width={1080}
@@ -240,10 +240,10 @@ export const Arrivo = () => (
     <Boat />
     <Column top={420}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 22, justifyContent: "center", width: 820 }}>
-        <Chip label="VIVERI" delay={2.4} color={palette.white} />
-        <Chip label="RADIO" delay={2.9} color={palette.white} />
-        <Chip label="REGISTRO" delay={3.4} color={palette.gold} />
-        <Chip label="TELEFONO" delay={4.6} color={palette.red} crossed />
+        <Chip label="VIVERI" delay={2.45} color={palette.white} />
+        <Chip label="RADIO" delay={3.5} color={palette.white} />
+        <Chip label="REGISTRO" delay={4.4} color={palette.gold} />
+        <Chip label="TELEFONO" delay={5.4} color={palette.red} crossed />
       </div>
     </Column>
   </>
@@ -279,13 +279,13 @@ const Wind = () => {
 export const Routine = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const second = frame >= 2.5 * fps;
+  const second = frame >= 3.65 * fps;
   return (
     <>
       <Wind />
       <Column top={420}>
         {second ? (
-          <Big key="11" color={palette.gold} size={150} delay={2.5}>
+          <Big key="11" color={palette.gold} size={150} delay={3.65}>
             NOTTE 11
           </Big>
         ) : (
@@ -293,7 +293,7 @@ export const Routine = () => {
             NOTTE 3
           </Big>
         )}
-        <Big color={palette.green} size={84} delay={4.2}>
+        <Big color={palette.green} size={84} delay={4.9}>
           €25.000 / NOTTE
         </Big>
       </Column>
@@ -331,7 +331,7 @@ export const Registro = () => {
           REGISTRO DEL FARO
         </div>
         {keepers.map((name, i) => {
-          const delay = 3.4 + i * 0.45;
+          const delay = 3.5 + i * 0.4;
           return (
             <div
               key={name}
@@ -354,7 +354,7 @@ export const Registro = () => {
           style={{
             fontSize: 44,
             color: "#2b2418",
-            opacity: interpolate(frame, [9 * fps, 9.6 * fps], [0, 0.6], clamp),
+            opacity: interpolate(frame, [9.9 * fps, 10.5 * fps], [0, 0.6], clamp),
           }}
         >
           7. ____________
@@ -371,7 +371,7 @@ const ShipLights = () => {
   return (
     <svg width={1080} height={1920} style={{ position: "absolute", inset: 0 }}>
       {[0, 1, 2, 3, 4].map((i) => {
-        const appear = (3 + i * 0.6) * fps;
+        const appear = (5 + i * 0.5) * fps;
         const progress = interpolate(frame, [appear, appear + 5 * fps], [0, 1], clamp);
         const x = 120 + i * 190 + Math.sin(i * 2.3) * 40;
         const y = interpolate(progress, [0, 1], [1360, 1460 + i * 30]);
@@ -392,7 +392,7 @@ const ShipLights = () => {
 const Radio = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const pop = usePop(2.6, 200);
+  const pop = usePop(3.1, 200);
   return (
     <div
       style={{
@@ -452,7 +452,7 @@ const Radio = () => {
 export const RadioScene = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const blackout = interpolate(frame, [2 * fps, 2.6 * fps], [1, 0], clamp);
+  const blackout = interpolate(frame, [3 * fps, 3.6 * fps], [1, 0], clamp);
   return (
     <>
       <ShipLights />
@@ -460,7 +460,7 @@ export const RadioScene = () => {
       <AbsoluteFill
         style={{
           background: "linear-gradient(180deg, transparent 45%, rgba(170,185,210,0.28) 70%, rgba(170,185,210,0.12) 100%)",
-          opacity: interpolate(frame, [2.5 * fps, 5 * fps], [0, 1], clamp),
+          opacity: interpolate(frame, [3.2 * fps, 6 * fps], [0, 1], clamp),
         }}
       />
       <Column top={430}>
@@ -524,8 +524,8 @@ export const Scelta = () => {
   return (
     <Column top={470}>
       <div style={{ display: "flex", gap: 36 }}>
-        <ChoiceButton label="ACCESA" color={palette.gold} delay={4} pulseOffset={0} />
-        <ChoiceButton label="SPENTA" color={palette.red} delay={4.4} pulseOffset={Math.PI} />
+        <ChoiceButton label="ACCESA" color={palette.gold} delay={6.6} pulseOffset={0} />
+        <ChoiceButton label="SPENTA" color={palette.red} delay={7.5} pulseOffset={Math.PI} />
       </div>
       <div
         style={{
@@ -536,7 +536,7 @@ export const Scelta = () => {
           color: palette.gold,
           letterSpacing: 2,
           textShadow,
-          opacity: interpolate(frame, [5 * fps, 5.5 * fps], [0, 1], clamp),
+          opacity: interpolate(frame, [8 * fps, 8.5 * fps], [0, 1], clamp),
         }}
       >
         SCRIVILO NEI COMMENTI

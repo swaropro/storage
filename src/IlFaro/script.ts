@@ -27,7 +27,7 @@ export const scenes: readonly SceneDef[] = [
   {
     id: "gancio",
     start: 0,
-    end: 6,
+    end: 7.2,
     night: 0,
     lines: [
       "Un *milione* di euro.",
@@ -37,8 +37,8 @@ export const scenes: readonly SceneDef[] = [
   },
   {
     id: "regola",
-    start: 6,
-    end: 15,
+    start: 7.2,
+    end: 15.7,
     night: 0,
     lines: [
       "Il lavoro è semplice:",
@@ -50,8 +50,8 @@ export const scenes: readonly SceneDef[] = [
   },
   {
     id: "arrivo",
-    start: 15,
-    end: 24,
+    start: 15.7,
+    end: 25.2,
     night: 1,
     lines: [
       "Una barca ti lascia sullo scoglio.",
@@ -62,8 +62,8 @@ export const scenes: readonly SceneDef[] = [
   },
   {
     id: "routine",
-    start: 24,
-    end: 33,
+    start: 25.2,
+    end: 34.3,
     night: 11,
     lines: [
       "*Notte tre.* Il vento non si ferma mai.",
@@ -74,8 +74,8 @@ export const scenes: readonly SceneDef[] = [
   },
   {
     id: "registro",
-    start: 33,
-    end: 45,
+    start: 34.3,
+    end: 45.7,
     night: 37,
     lines: [
       "*Notte trentasette.*",
@@ -88,8 +88,8 @@ export const scenes: readonly SceneDef[] = [
   },
   {
     id: "radio",
-    start: 45,
-    end: 54,
+    start: 45.7,
+    end: 55.5,
     night: 39,
     lines: [
       "*Notte trentanove.* Le !due e quattordici.!",
@@ -100,8 +100,8 @@ export const scenes: readonly SceneDef[] = [
   },
   {
     id: "scelta",
-    start: 54,
-    end: 62,
+    start: 55.5,
+    end: 67.5,
     night: 39,
     lines: [
       "Il contratto è chiaro:",
@@ -182,14 +182,14 @@ export const buildCaptions = (): Caption[] => {
 
 // [secondo, notte]: l'HUD conta le notti (e i soldi) tra un punto e l'altro.
 export const nightKeyframes: readonly (readonly [number, number])[] = [
-  [15, 0],
-  [15.6, 1],
-  [24, 1],
-  [24.6, 3],
-  [26.5, 3],
-  [27.6, 11],
-  [33, 11],
-  [34.2, 37],
-  [45, 37],
-  [45.5, 39],
+  [15.9, 0],
+  [16.5, 1],
+  [25.4, 1],
+  [26, 3],
+  [28.8, 3],
+  [29.8, 11],
+  [34.5, 11],
+  [35.6, 37],
+  [45.9, 37],
+  [46.5, 39],
 ];

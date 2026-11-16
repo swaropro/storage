@@ -36,25 +36,25 @@ export const IlFaroEp1 = () => {
       <FlickeringBackground />
       <BottomShade />
       <Track name="Scene">
-        <Sequence name="1 Gancio" from={0} durationInFrames={6 * fps}>
+        <Sequence name="1 Gancio" from={0 * fps} durationInFrames={7.2 * fps}>
           <Gancio />
         </Sequence>
-        <Sequence name="2 Regola" from={6 * fps} durationInFrames={9 * fps}>
+        <Sequence name="2 Regola" from={7.2 * fps} durationInFrames={8.5 * fps}>
           <Regola />
         </Sequence>
-        <Sequence name="3 Arrivo" from={15 * fps} durationInFrames={9 * fps}>
+        <Sequence name="3 Arrivo" from={15.7 * fps} durationInFrames={9.5 * fps}>
           <Arrivo />
         </Sequence>
-        <Sequence name="4 Routine" from={24 * fps} durationInFrames={9 * fps}>
+        <Sequence name="4 Routine" from={25.2 * fps} durationInFrames={9.1 * fps}>
           <Routine />
         </Sequence>
-        <Sequence name="5 Registro" from={33 * fps} durationInFrames={12 * fps}>
+        <Sequence name="5 Registro" from={34.3 * fps} durationInFrames={11.4 * fps}>
           <Registro />
         </Sequence>
-        <Sequence name="6 Radio" from={45 * fps} durationInFrames={9 * fps}>
+        <Sequence name="6 Radio" from={45.7 * fps} durationInFrames={9.8 * fps}>
           <RadioScene />
         </Sequence>
-        <Sequence name="7 Scelta" from={54 * fps} durationInFrames={8 * fps}>
+        <Sequence name="7 Scelta" from={55.5 * fps} durationInFrames={12 * fps}>
           <Scelta />
         </Sequence>
       </Track>

@@ -71,7 +71,8 @@ const readWords = (path: string): Word[] => {
         endMs: Math.round(inMs ? w.endMs : w.end * 1000),
       };
     })
-    .filter((w) => w.word.length > 0);
+    // toglie i tag di regia di ElevenLabs, es. "[deep" "voice]" "[pause]"
+    .filter((w) => w.word.length > 0 && !w.word.startsWith("[") && !w.word.endsWith("]"));
 };
 
 // Parole del copione con il loro colore (stesso markup di script.ts).
@@ -124,9 +125,15 @@ let inPage = 0;
 const captions: Caption[] = words.map((w, i) => {
   inPage++;
   const next = words[i + 1];
-  const sentenceEnd = /[.?!:»]$/.test(w.word);
+  const sentenceEnd = /[.?!:»…]$/.test(w.word);
   const longPause = next ? next.startMs - w.endMs > 350 : true;
-  const pageBreakAfter = sentenceEnd || longPause || inPage >= MAX_WORDS_PER_PAGE;
+  // a 4 parole si va a capo, ma non se la parola dopo chiude la frase (max 5)
+  const nextClosesSentence = next ? /[.?!:»…]$/.test(next.word) : false;
+  const pageBreakAfter =
+    sentenceEnd ||
+    longPause ||
+    inPage >= MAX_WORDS_PER_PAGE + 1 ||
+    (inPage >= MAX_WORDS_PER_PAGE && !nextClosesSentence);
   if (pageBreakAfter) inPage = 0;
   return {
     text: `${tones[i]}|${w.word}`,

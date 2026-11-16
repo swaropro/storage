@@ -39,9 +39,14 @@ Ogni episodio finisce con una **scelta** che il pubblico vota nei commenti. L'ep
 | 45–54 s | La radio | Notte trentanove. Le 2:14. La radio si accende da sola. «Spegni la luce. Adesso.» «Quelle che stai guidando non sono navi.» | 2:14 rosso, la radio con l'onda della voce, luci nella nebbia |
 | 54–62 s | La scelta | Il contratto è chiaro: se la luce si spegne, perdi tutto. Allora, cosa fai? Scrivi ACCESA o SPENTA. Decidi tu la notte quaranta. | Pulsanti ACCESA / SPENTA e "SCRIVILO NEI COMMENTI" |
 
-## Cosa manca per la versione finale
+## Voce e sottotitoli (fatto per l'ep. 1)
 
-1. **Voce narrante**: va generata (es. ElevenLabs, serve una chiave API) oppure registrata da te.
-2. **Tempi dei sottotitoli**: adesso sono stimati. Con l'audio vero si ricavano con Whisper (skill `remotion-captions`).
-3. **Musica e suoni**: tappeto ambient, vento, onde, rumore della radio.
-4. *(Facoltativo)* **Illustrazioni** in stile cartone come il video di riferimento: personaggio e ambienti disegnati, generati con un modello di immagini o forniti da te. Ora la grafica è fatta tutta in codice (forme vettoriali).
+- **Voce:** ElevenLabs, voce *Dade M – Mysterious Suspense Narrator* (italiano), modello `eleven_v4` con tag di regia ([pause], [whispers]…). File: `public/il-faro/ep1-voce.mp3` (take 1; la take 2 è in `assets/il-faro/`).
+- **Tempi parola per parola:** trascrizione ElevenLabs Scribe → `assets/il-faro/ep1-words.json`.
+- **Sottotitoli:** `npm run captions -- assets/il-faro/ep1-words.json src/IlFaro/ep1-captions.json` (riprende i colori dal copione).
+- Le scene e le animazioni sono allineate ai tempi della voce (65,8 s di parlato + 1,7 s di coda).
+
+## Cosa manca ancora
+
+1. **Musica e suoni**: tappeto ambient, vento, onde, rumore della radio.
+2. *(Facoltativo)* **Illustrazioni** in stile cartone come il video di riferimento: personaggio e ambienti disegnati, generati con un modello di immagini o forniti da te. Ora la grafica è fatta tutta in codice (forme vettoriali).

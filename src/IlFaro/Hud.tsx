@@ -5,17 +5,30 @@ import { fontFamily, palette } from "./theme";
 const euro = (n: number) => `€${Math.round(n).toLocaleString("it-IT")}`;
 
 // Barra in alto: titolo della serie, notte e soldi accumulati.
-export const Hud = ({ episode }: { readonly episode: number }) => {
+export const Hud = ({
+  episode,
+  nightAt,
+  moneyAt,
+}: {
+  readonly episode: number;
+  // facoltativi: per gli episodi dopo il primo
+  readonly nightAt?: (seconds: number) => number;
+  readonly moneyAt?: (seconds: number) => number;
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const nightFloat = interpolate(
-    frame / fps,
-    nightKeyframes.map((k) => k[0]),
-    nightKeyframes.map((k) => k[1]),
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-  );
+  const seconds = frame / fps;
+  const nightFloat = nightAt
+    ? nightAt(seconds)
+    : interpolate(
+        seconds,
+        nightKeyframes.map((k) => k[0]),
+        nightKeyframes.map((k) => k[1]),
+        { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+      );
   const night = Math.round(nightFloat);
-  const money = nightFloat * EURO_PER_NIGHT;
+  const money = moneyAt ? moneyAt(seconds) : nightFloat * EURO_PER_NIGHT;
+  const lost = moneyAt !== undefined && money < 1;
   return (
     <div
       style={{
@@ -69,7 +82,7 @@ export const Hud = ({ episode }: { readonly episode: number }) => {
         }}
       >
         <span style={{ color: palette.red }}>NOTTE {night}/40</span>
-        <span style={{ color: palette.green }}>{euro(money)}</span>
+        <span style={{ color: lost ? palette.red : palette.green, textDecoration: lost ? "line-through" : undefined }}>{euro(money)}</span>
       </div>
     </div>
   );

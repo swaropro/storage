@@ -74,3 +74,27 @@ Composizione `IlFaroEp1` (codice in `src/IlFaro/v2/`). La prima bozza resta come
 | `sfx-boom.mp3` | 2:14 e "non sono navi" | 45,75 s · 54,3 s |
 
 Risparmio crediti: ambienti brevi in loop (non tracce lunghe), una sola versione per suono, effetti riusati. Volumi bilanciati con ffmpeg. Gli ambienti si incrociano con dissolvenze di 1 s (`Soundtrack.tsx`) e sono riutilizzabili negli episodi successivi.
+
+## Ep. 2 — "Spenta" (48 s) · composizione `IlFaroEp2`
+
+Segue la scelta **B · SPENTA** dell'ep. 1. Codice: `src/IlFaro/v2/Episode2.tsx`, `ep2Scene.tsx`, `Boatman.tsx`, `GroundFloor.tsx`. Copione con i colori: `src/IlFaro/ep2/script.ts`.
+
+| Tempo | Cosa succede | Suono |
+|---|---|---|
+| 0–2 s | "AVETE SCELTO: B · SPENTA"; il guardiano ha la mano sulla leva, la luce ancora accesa | ronzio di terrore |
+| 2–6 s | "Spegni la luce": tira la leva, il faro si spegne, tutto diventa nero | leva + spegnimento |
+| 6–16 s | Buio; il vento si ferma; le luci nel mare si fermano e si spengono una alla volta | silenzio quasi totale |
+| 16–19 s | "Hai perso il milione": il contatore scende a €0 e viene barrato; il guardiano respira | silenzio |
+| 19–25 s | Tre colpi alla porta del faro, una lanterna accesa accanto alla porta (TOC. TOC. TOC.) | tre colpi |
+| 25–29 s | Il guardiano scende le scale e va alla finestra; fuori, la luce della lanterna | stanza inquieta |
+| 29–36 s | **L'antagonista**: primo piano del barcaiolo nell'oblò, il sorriso che si allarga; fumetto "Sei il primo che la spegne. Aprimi… ti spiego tutto." | colpo sordo |
+| 36–42 s | Il barcaiolo alla porta con la lanterna; dietro di lui gli occhi nel mare si riaccendono, e anche i suoi diventano verdi | colpo sordo, terrore |
+| 42–48 s | Scelta: **A · APRI LA PORTA** / **B · RIACCENDI LA LUCE**, conto alla rovescia | terrore |
+
+**L'antagonista — il barcaiolo:** cappotto scuro, cappello a tesa larga, barba grigia, lanterna. È l'uomo che ha portato il guardiano sull'isola, e i suoi occhi si accendono dello stesso verde delle "luci" nel mare.
+
+**Crediti ElevenLabs ep. 2:** voce 626 (1 sola take) + 2 effetti nuovi 18 (colpi alla porta, leva) + trascrizione 0 = **644**. Gli ambienti e il colpo sordo sono riusati dall'ep. 1.
+
+### Idee per l'ep. 3
+- **A · Apri la porta:** il barcaiolo entra e racconta che i sei guardiani prima di lui non sono mai ripartiti: sono diventati le "luci" nel mare. Il faro non guida le navi: le tiene lontane.
+- **B · Riaccendi la luce:** gli occhi si fermano, ma il barcaiolo non se ne va. Comincia a salire le scale esterne verso il ballatoio.

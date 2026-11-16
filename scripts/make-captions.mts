@@ -1,7 +1,7 @@
 // Converte i tempi reali della voce in sottotitoli Remotion (tipo Caption).
 //
 // Uso:
-//   node scripts/make-captions.mts <input> <output.json>
+//   node scripts/make-captions.mts <input> <output.json> [copione.ts]
 //
 // <input> può essere:
 //   - un file .srt (sottotitoli a frasi: le parole vengono distribuite nella frase)
@@ -26,9 +26,9 @@ type Caption = {
 type Word = { word: string; startMs: number; endMs: number };
 type Tone = "normal" | "gold" | "red";
 
-const [, , inputPath, outputPath] = process.argv;
+const [, , inputPath, outputPath, scriptPath = "src/IlFaro/script.ts"] = process.argv;
 if (!inputPath || !outputPath) {
-  console.error("Uso: node scripts/make-captions.mts <input> <output.json>");
+  console.error("Uso: node scripts/make-captions.mts <input> <output.json> [copione.ts]");
   process.exit(1);
 }
 
@@ -77,7 +77,7 @@ const readWords = (path: string): Word[] => {
 
 // Parole del copione con il loro colore (stesso markup di script.ts).
 const readScriptTones = (): { norm: string; tone: Tone }[] => {
-  const src = readFileSync(new URL("../src/IlFaro/script.ts", import.meta.url), "utf8");
+  const src = readFileSync(scriptPath, "utf8");
   const lines = [...src.matchAll(/^\s+"(.*)",$/gm)].map((m) => m[1]);
   const out: { norm: string; tone: Tone }[] = [];
   for (const line of lines) {
@@ -87,7 +87,7 @@ const readScriptTones = (): { norm: string; tone: Tone }[] => {
       let wordTone = tone;
       if (w.startsWith("*")) { tone = "gold"; wordTone = "gold"; w = w.slice(1); }
       else if (w.startsWith("!")) { tone = "red"; wordTone = "red"; w = w.slice(1); }
-      if (/[*!][.,:;?»]*$/.test(w)) tone = "normal";
+      if (/[*!][.,:;?»…]*$/.test(w)) tone = "normal";
       out.push({ norm: norm(w), tone: wordTone });
     }
   }

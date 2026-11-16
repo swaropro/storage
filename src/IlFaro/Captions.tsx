@@ -62,7 +62,7 @@ export const Captions = ({
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
-        gap: "4px 22px",
+        gap: "4px 30px",
         fontFamily,
         fontWeight: 800,
         fontSize: 78,
@@ -82,7 +82,7 @@ export const Captions = ({
             style={{
               color: toneColor[tone],
               opacity: spoken ? 1 : 0.45,
-              scale: active ? 1.08 : 1,
+              scale: active ? 1.05 : 1,
               display: "inline-block",
             }}
           >

@@ -1,0 +1,730 @@
+[
+  {
+    "text": "normal|Hai",
+    "startMs": 160,
+    "endMs": 400,
+    "timestampMs": 280,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "gold|scelto.",
+    "startMs": 560,
+    "endMs": 1680,
+    "timestampMs": 1120,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Spegni",
+    "startMs": 2240,
+    "endMs": 2640,
+    "timestampMs": 2440,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|la",
+    "startMs": 2680,
+    "endMs": 2720,
+    "timestampMs": 2700,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|luce.",
+    "startMs": 2800,
+    "endMs": 3400,
+    "timestampMs": 3100,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "red|Buio.",
+    "startMs": 3760,
+    "endMs": 4480,
+    "timestampMs": 4120,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "red|Totale.",
+    "startMs": 4720,
+    "endMs": 5680,
+    "timestampMs": 5200,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Il",
+    "startMs": 6288,
+    "endMs": 6320,
+    "timestampMs": 6304,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|vento",
+    "startMs": 6400,
+    "endMs": 6720,
+    "timestampMs": 6560,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|si",
+    "startMs": 6800,
+    "endMs": 6880,
+    "timestampMs": 6840,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|ferma.",
+    "startMs": 6960,
+    "endMs": 7640,
+    "timestampMs": 7300,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Le",
+    "startMs": 7920,
+    "endMs": 8000,
+    "timestampMs": 7960,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|luci",
+    "startMs": 8040,
+    "endMs": 8240,
+    "timestampMs": 8140,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|nel",
+    "startMs": 8320,
+    "endMs": 8480,
+    "timestampMs": 8400,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|mare…",
+    "startMs": 8560,
+    "endMs": 9200,
+    "timestampMs": 8880,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|si",
+    "startMs": 9280,
+    "endMs": 9360,
+    "timestampMs": 9320,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|fermano",
+    "startMs": 9440,
+    "endMs": 9840,
+    "timestampMs": 9640,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|anche",
+    "startMs": 9920,
+    "endMs": 10000,
+    "timestampMs": 9960,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|loro.",
+    "startMs": 10120,
+    "endMs": 10400,
+    "timestampMs": 10260,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Poi,",
+    "startMs": 11024,
+    "endMs": 11600,
+    "timestampMs": 11312,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|una",
+    "startMs": 11680,
+    "endMs": 11840,
+    "timestampMs": 11760,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|alla",
+    "startMs": 11960,
+    "endMs": 12080,
+    "timestampMs": 12020,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|volta,",
+    "startMs": 12200,
+    "endMs": 12800,
+    "timestampMs": 12500,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "red|si",
+    "startMs": 12880,
+    "endMs": 12960,
+    "timestampMs": 12920,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "red|spengono.",
+    "startMs": 13040,
+    "endMs": 13880,
+    "timestampMs": 13460,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Hai",
+    "startMs": 14240,
+    "endMs": 14320,
+    "timestampMs": 14280,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|perso",
+    "startMs": 14400,
+    "endMs": 14667,
+    "timestampMs": 14534,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|il",
+    "startMs": 14693,
+    "endMs": 14720,
+    "timestampMs": 14707,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "gold|milione.",
+    "startMs": 14800,
+    "endMs": 15520,
+    "timestampMs": 15160,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Ma",
+    "startMs": 15760,
+    "endMs": 15840,
+    "timestampMs": 15800,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|sei",
+    "startMs": 15920,
+    "endMs": 16080,
+    "timestampMs": 16000,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "gold|vivo.",
+    "startMs": 16160,
+    "endMs": 16760,
+    "timestampMs": 16460,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Poi",
+    "startMs": 17107,
+    "endMs": 17280,
+    "timestampMs": 17194,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|qualcuno",
+    "startMs": 17440,
+    "endMs": 17840,
+    "timestampMs": 17640,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "red|bussa.",
+    "startMs": 17880,
+    "endMs": 18480,
+    "timestampMs": 18180,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "red|Tre",
+    "startMs": 18640,
+    "endMs": 18800,
+    "timestampMs": 18720,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "red|colpi.",
+    "startMs": 18880,
+    "endMs": 19440,
+    "timestampMs": 19160,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Alla",
+    "startMs": 19600,
+    "endMs": 19800,
+    "timestampMs": 19700,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|porta",
+    "startMs": 19840,
+    "endMs": 20080,
+    "timestampMs": 19960,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|del",
+    "startMs": 20160,
+    "endMs": 20240,
+    "timestampMs": 20200,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|faro.",
+    "startMs": 20320,
+    "endMs": 20800,
+    "timestampMs": 20560,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Su",
+    "startMs": 20960,
+    "endMs": 21040,
+    "timestampMs": 21000,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|un'isola",
+    "startMs": 21120,
+    "endMs": 21520,
+    "timestampMs": 21320,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|dove",
+    "startMs": 21680,
+    "endMs": 21840,
+    "timestampMs": 21760,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "red|non",
+    "startMs": 21920,
+    "endMs": 22000,
+    "timestampMs": 21960,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "red|c'è",
+    "startMs": 22080,
+    "endMs": 22160,
+    "timestampMs": 22120,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "red|nessuno.",
+    "startMs": 22320,
+    "endMs": 22960,
+    "timestampMs": 22640,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Scendi",
+    "startMs": 23200,
+    "endMs": 23440,
+    "timestampMs": 23320,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|le",
+    "startMs": 23480,
+    "endMs": 23520,
+    "timestampMs": 23500,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|scale.",
+    "startMs": 23600,
+    "endMs": 24160,
+    "timestampMs": 23880,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Dalla",
+    "startMs": 24320,
+    "endMs": 24480,
+    "timestampMs": 24400,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|finestra",
+    "startMs": 24560,
+    "endMs": 25040,
+    "timestampMs": 24800,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|vedi",
+    "startMs": 25200,
+    "endMs": 25400,
+    "timestampMs": 25300,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|una",
+    "startMs": 25440,
+    "endMs": 25520,
+    "timestampMs": 25480,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "gold|lanterna.",
+    "startMs": 25640,
+    "endMs": 26480,
+    "timestampMs": 26060,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|È",
+    "startMs": 26864,
+    "endMs": 26880,
+    "timestampMs": 26872,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|il",
+    "startMs": 26920,
+    "endMs": 26960,
+    "timestampMs": 26940,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "red|barcaiolo.",
+    "startMs": 27040,
+    "endMs": 27840,
+    "timestampMs": 27440,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Quello",
+    "startMs": 28000,
+    "endMs": 28160,
+    "timestampMs": 28080,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|che",
+    "startMs": 28200,
+    "endMs": 28240,
+    "timestampMs": 28220,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|ti",
+    "startMs": 28320,
+    "endMs": 28360,
+    "timestampMs": 28340,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|ha",
+    "startMs": 28400,
+    "endMs": 28440,
+    "timestampMs": 28420,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|portato",
+    "startMs": 28480,
+    "endMs": 28800,
+    "timestampMs": 28640,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|qui.",
+    "startMs": 28880,
+    "endMs": 29320,
+    "timestampMs": 29100,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Sorride.",
+    "startMs": 29520,
+    "endMs": 30200,
+    "timestampMs": 29860,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|«Sei",
+    "startMs": 30400,
+    "endMs": 30600,
+    "timestampMs": 30500,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|il",
+    "startMs": 30640,
+    "endMs": 30720,
+    "timestampMs": 30680,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "gold|primo",
+    "startMs": 30800,
+    "endMs": 31040,
+    "timestampMs": 30920,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|che",
+    "startMs": 31080,
+    "endMs": 31120,
+    "timestampMs": 31100,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|la",
+    "startMs": 31200,
+    "endMs": 31280,
+    "timestampMs": 31240,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|spegne.",
+    "startMs": 31320,
+    "endMs": 31920,
+    "timestampMs": 31620,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Aprimi…",
+    "startMs": 32080,
+    "endMs": 32600,
+    "timestampMs": 32340,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|ti",
+    "startMs": 32720,
+    "endMs": 32800,
+    "timestampMs": 32760,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|spiego",
+    "startMs": 32840,
+    "endMs": 33120,
+    "timestampMs": 32980,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|tutto.»",
+    "startMs": 33160,
+    "endMs": 33787,
+    "timestampMs": 33474,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Dietro",
+    "startMs": 34000,
+    "endMs": 34240,
+    "timestampMs": 34120,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|di",
+    "startMs": 34320,
+    "endMs": 34400,
+    "timestampMs": 34360,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|lui,",
+    "startMs": 34480,
+    "endMs": 34840,
+    "timestampMs": 34660,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|nell'acqua,",
+    "startMs": 34960,
+    "endMs": 35720,
+    "timestampMs": 35340,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|gli",
+    "startMs": 35840,
+    "endMs": 35920,
+    "timestampMs": 35880,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|occhi",
+    "startMs": 36000,
+    "endMs": 36160,
+    "timestampMs": 36080,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "red|si",
+    "startMs": 36240,
+    "endMs": 36320,
+    "timestampMs": 36280,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "red|riaccendono.",
+    "startMs": 36360,
+    "endMs": 37280,
+    "timestampMs": 36820,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|Gli",
+    "startMs": 37589,
+    "endMs": 37640,
+    "timestampMs": 37615,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|apri",
+    "startMs": 37680,
+    "endMs": 37840,
+    "timestampMs": 37760,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|la",
+    "startMs": 37920,
+    "endMs": 38000,
+    "timestampMs": 37960,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "gold|porta…",
+    "startMs": 38080,
+    "endMs": 38680,
+    "timestampMs": 38380,
+    "confidence": null,
+    "pageBreakAfter": true
+  },
+  {
+    "text": "normal|o",
+    "startMs": 38880,
+    "endMs": 38960,
+    "timestampMs": 38920,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|riaccendi",
+    "startMs": 39040,
+    "endMs": 39520,
+    "timestampMs": 39280,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "normal|la",
+    "startMs": 39560,
+    "endMs": 39600,
+    "timestampMs": 39580,
+    "confidence": null,
+    "pageBreakAfter": false
+  },
+  {
+    "text": "gold|luce?",
+    "startMs": 39680,
+    "endMs": 40240,
+    "timestampMs": 39960,
+    "confidence": null,
+    "pageBreakAfter": true
+  }
+]

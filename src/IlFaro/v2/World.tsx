@@ -1,5 +1,6 @@
+import type React from "react";
 import { random, useCurrentFrame, useVideoConfig } from "remotion";
-import { Keeper } from "./Keeper";
+import { Keeper, type KeeperPose } from "./Keeper";
 import {
   boatX,
   camera,
@@ -85,10 +86,18 @@ const Lighthouse = ({ t, lightOn }: { readonly t: number; readonly lightOn: bool
   );
 };
 
-const Eyes = ({ t }: { readonly t: number }) => {
-  const a = eyesAmount(t);
+const Eyes = ({
+  t,
+  a,
+  p,
+  alive,
+}: {
+  readonly t: number;
+  readonly a: number;
+  readonly p: number;
+  readonly alive?: (i: number) => number;
+}) => {
   if (a <= 0) return null;
-  const p = eyesApproach(t);
   return (
     <g opacity={a}>
       {new Array(9).fill(true).map((_, i) => {
@@ -98,7 +107,7 @@ const Eyes = ({ t }: { readonly t: number }) => {
         const s = 1.5 + random(`es${i}`) * 0.8 + p * 1.0;
         const blink = Math.sin(t * 2 + i * 1.7) > 0.96 ? 0.15 : 1;
         return (
-          <g key={i} transform={`translate(${x} ${y}) scale(${s} ${s * blink})`}>
+          <g key={i} opacity={alive ? alive(i) : 1} transform={`translate(${x} ${y}) scale(${s} ${s * blink})`}>
             <circle cx={-16} cy={0} r={9} fill="#e8ffb0" />
             <circle cx={16} cy={0} r={9} fill="#e8ffb0" />
             <circle cx={0} cy={0} r={60} fill="#d9ff8a" opacity={0.12} />
@@ -137,15 +146,49 @@ const Props = ({ t }: { readonly t: number }) => {
   );
 };
 
-export const World = ({ lightOn = true }: { readonly lightOn?: boolean }) => {
+// Cosa succede nel mondo, in funzione del tempo: ogni episodio ne passa una sua.
+export type WorldScene = {
+  readonly camera: (t: number) => { x: number; y: number; zoom: number };
+  readonly sky: (t: number) => { top: string; bottom: string };
+  readonly night: (t: number) => number;
+  readonly keeper: (t: number) => KeeperPose | null;
+  readonly boatX: (t: number) => number | null;
+  readonly eyes: (t: number) => { amount: number; approach: number; alive?: (i: number) => number };
+  readonly fog: (t: number) => number;
+  readonly props: boolean;
+  readonly darkness?: (t: number) => number; // velo nero sul mondo (gli occhi restano visibili)
+  readonly extra?: (t: number) => React.ReactNode; // personaggi/oggetti in più, sopra il buio
+};
+
+export const ep1Scene: WorldScene = {
+  camera,
+  sky: skyColors,
+  night: nightAmount,
+  keeper: keeperOutside,
+  boatX,
+  eyes: (t) => ({ amount: eyesAmount(t), approach: eyesApproach(t) }),
+  fog: fogAmount,
+  props: true,
+};
+
+export const World = ({
+  lightOn = true,
+  scene = ep1Scene,
+}: {
+  readonly lightOn?: boolean;
+  readonly scene?: WorldScene;
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
-  const cam = camera(t);
-  const sky = skyColors(t);
-  const night = nightAmount(t);
-  const k = keeperOutside(t);
-  const fog = fogAmount(t);
+  const cam = scene.camera(t);
+  const sky = scene.sky(t);
+  const night = scene.night(t);
+  const k = scene.keeper(t);
+  const fog = scene.fog(t);
+  const eyes = scene.eyes(t);
+  const boat = scene.boatX(t);
+  const dark = scene.darkness ? scene.darkness(t) : 0;
   return (
     <svg width={1080} height={1920} style={{ position: "absolute", inset: 0 }}>
       <defs>
@@ -160,6 +203,10 @@ export const World = ({ lightOn = true }: { readonly lightOn?: boolean }) => {
         <radialGradient id="lampGlow">
           <stop offset="0" stopColor="#fff2c2" stopOpacity="0.85" />
           <stop offset="1" stopColor="#fff2c2" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="lanternGlow">
+          <stop offset="0" stopColor="#ffbe66" stopOpacity="0.7" />
+          <stop offset="1" stopColor="#ffbe66" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="fogG" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#b8c9b0" stopOpacity="0" />
@@ -191,16 +238,18 @@ export const World = ({ lightOn = true }: { readonly lightOn?: boolean }) => {
         {[800, 880, 960, 1040].map((px) => (
           <rect key={px} x={px} y={DOCK_Y + 18} width={16} height={90} fill="#5a3d26" stroke={INK} strokeWidth={4} />
         ))}
-        <Props t={t} />
-        <Boat x={boatX(t)} t={t} />
-        <Keeper {...k} />
+        {scene.props ? <Props t={t} /> : null}
+        {boat !== null ? <Boat x={boat} t={t} /> : null}
+        {k ? <Keeper {...k} /> : null}
         {/* mare */}
         <path d={wave(SEA_Y, 10, 60, t * 40)} fill="#1c3550" opacity={0.95} />
-        <Eyes t={t} />
         <path d={wave(SEA_Y + 70, 14, 90, -t * 55)} fill="#13283f" />
         <path d={wave(SEA_Y + 170, 18, 120, t * 70)} fill="#0b1a2c" />
         {/* nebbia */}
         <rect x={-600} y={1000} width={3600} height={900} fill="url(#fogG)" opacity={fog} />
+        {dark > 0 ? <rect x={-2000} y={-2000} width={7000} height={6000} fill="#000" opacity={dark} /> : null}
+        {scene.extra ? scene.extra(t) : null}
+        <Eyes t={t} a={eyes.amount} p={eyes.approach} alive={eyes.alive} />
       </g>
     </svg>
   );

@@ -321,7 +321,17 @@ const ChoiceCard = ({
   );
 };
 
-export const Choice = () => {
+type Option = { readonly title: string; readonly sub: string };
+
+export const Choice = ({
+  a = { title: "ACCESA", sub: "Tieni il milione. Guardi cosa arriva." },
+  b = { title: "SPENTA", sub: "Perdi tutto. Ma forse resti vivo." },
+  nextEp = 2,
+}: {
+  readonly a?: Option;
+  readonly b?: Option;
+  readonly nextEp?: number;
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
@@ -333,8 +343,8 @@ export const Choice = () => {
   return (
     <AbsoluteFill style={{ background: `rgba(0,0,0,${dim})`, fontFamily, alignItems: "center" }}>
       <div style={{ position: "absolute", top: 860, display: "flex", flexDirection: "column", gap: 26, alignItems: "center" }}>
-        <ChoiceCard letter="A" title="ACCESA" sub="Tieni il milione. Guardi cosa arriva." color="#d99a12" delay={0.5} />
-        <ChoiceCard letter="B" title="SPENTA" sub="Perdi tutto. Ma forse resti vivo." color="#c22a3a" delay={1.4} />
+        <ChoiceCard letter="A" title={a.title} sub={a.sub} color="#d99a12" delay={0.5} />
+        <ChoiceCard letter="B" title={b.title} sub={b.sub} color="#c22a3a" delay={1.4} />
         {t > countStart ? (
           <>
             <div style={{ width: 760, height: 18, borderRadius: 9, background: "rgba(255,255,255,0.2)", marginTop: 16, overflow: "hidden" }}>
@@ -343,7 +353,7 @@ export const Choice = () => {
             <div style={{ fontSize: 90, fontWeight: 800, color: "white", textShadow, lineHeight: 1 }}>{n}</div>
             <div style={{ fontSize: 46, fontWeight: 800, color: palette.gold, textShadow }}>COMMENTA A O B</div>
             <div style={{ fontSize: 32, fontWeight: 600, color: "white", textShadow, opacity: 0.9 }}>
-              Il tuo voto decide l'Ep.2 · SEGUI PER L'EP.2
+              Il tuo voto decide l'Ep.{nextEp} · SEGUI PER L'EP.{nextEp}
             </div>
           </>
         ) : null}

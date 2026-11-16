@@ -9,6 +9,7 @@
   },
   "private": true,
   "dependencies": {
+    "@remotion/captions": "4.0.544",
     "@remotion/cli": "4.0.544",
     "@remotion/fonts": "4.0.544",
     "@remotion/shapes": "4.0.544",

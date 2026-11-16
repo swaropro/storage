@@ -50,3 +50,27 @@ Ogni episodio finisce con una **scelta** che il pubblico vota nei commenti. L'ep
 
 1. **Musica e suoni**: tappeto ambient, vento, onde, rumore della radio.
 2. *(Facoltativo)* **Illustrazioni** in stile cartone come il video di riferimento: personaggio e ambienti disegnati, generati con un modello di immagini o forniti da te. Ora la grafica è fatta tutta in codice (forme vettoriali).
+
+## Ep. 1 v2 — personaggio, camera e suoni
+
+Composizione `IlFaroEp1` (codice in `src/IlFaro/v2/`). La prima bozza resta come `IlFaroEp1Bozza`.
+
+- **Il guardiano** (`Keeper.tsx`): omino con impermeabile giallo e berretto rosso. Cammina, salta, si siede, alza le braccia, cambia espressione.
+- **Il mondo** (`World.tsx` + `timeline.ts`): vista laterale con isola, pontile, faro e barca; camera con zoom e carrellate; il cielo cambia colore con la tensione (tramonto → notte → verde malato → rosso).
+- **Interni** (`Room.tsx`): la stanza con il registro (lampada che tremola) e la radio che si accende al buio.
+- **Grafiche** (`Overlays.tsx`): contratto con timbro, registro, orologio 2:14, fumetti della radio, carte A/B con conto alla rovescia.
+
+### Suoni (ElevenLabs Sound Effects v2, 170 crediti in tutto)
+
+| File | Uso | Quando |
+|---|---|---|
+| `amb-a-mare-calmo.mp3` (loop 10 s) | mare calmo | 0–26 s |
+| `amb-b-vento.mp3` (loop 10 s) | vento forte | 25–35 s |
+| `amb-c-stanza.mp3` (loop 10 s) | stanza inquietante | 34–46 s |
+| `amb-d-terrore.mp3` (loop 10 s) | terrore, nebbia | 45–67 s |
+| `sfx-timbro.mp3` | timbro "MAI" | 14,5 s |
+| `sfx-barca.mp3` | la barca riparte | 17 s |
+| `sfx-radio.mp3` | la radio si accende | 48,7 s |
+| `sfx-boom.mp3` | 2:14 e "non sono navi" | 45,75 s · 54,3 s |
+
+Risparmio crediti: ambienti brevi in loop (non tracce lunghe), una sola versione per suono, effetti riusati. Volumi bilanciati con ffmpeg. Gli ambienti si incrociano con dissolvenze di 1 s (`Soundtrack.tsx`) e sono riutilizzabili negli episodi successivi.

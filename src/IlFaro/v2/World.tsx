@@ -1,14 +1,18 @@
 import type React from "react";
 import { random, useCurrentFrame, useVideoConfig } from "remotion";
 import { Keeper, type KeeperPose } from "./Keeper";
+import { Lever } from "./Lever";
 import {
   boatX,
   camera,
   DOCK_Y,
+  eyesAlive,
   eyesAmount,
   eyesApproach,
   fogAmount,
+  GALLERY_Y,
   keeperOutside,
+  leverAngle,
   nightAmount,
   skyColors,
 } from "./timeline";
@@ -166,9 +170,10 @@ export const ep1Scene: WorldScene = {
   night: nightAmount,
   keeper: keeperOutside,
   boatX,
-  eyes: (t) => ({ amount: eyesAmount(t), approach: eyesApproach(t) }),
+  eyes: (t) => ({ amount: eyesAmount(t), approach: eyesApproach(t), alive: (i) => eyesAlive(t, i) }),
   fog: fogAmount,
   props: true,
+  extra: (t) => <Lever x={1762} y={GALLERY_Y - 4} angle={leverAngle(t)} />,
 };
 
 export const World = ({

@@ -98,3 +98,22 @@ Segue la scelta **B · SPENTA** dell'ep. 1. Codice: `src/IlFaro/v2/Episode2.tsx`
 ### Idee per l'ep. 3
 - **A · Apri la porta:** il barcaiolo entra e racconta che i sei guardiani prima di lui non sono mai ripartiti: sono diventati le "luci" nel mare. Il faro non guida le navi: le tiene lontane.
 - **B · Riaccendi la luce:** gli occhi si fermano, ma il barcaiolo non se ne va. Comincia a salire le scale esterne verso il ballatoio.
+
+## Ep. 1 v3 — una sola notte con un imprevisto (65 s)
+
+Al posto del montaggio delle notti 3 → 11 → 37 (e del registro) c'è **una notte con un imprevisto risolto subito**, poi si va dritti alla notte 39.
+
+| Tempo | Cosa succede | Suono |
+|---|---|---|
+| 0–25 s | Gancio, contratto, arrivo in barca (come prima) | mare calmo, timbro, barca |
+| 25–31 s | **Notte 12**: tempesta, pioggia, lampi; il guardiano alla base del faro; la luce trema | vento forte, tuono |
+| 31–33 s | Un fulmine: **la luce si spegne**. "Hai pochi secondi." | tuono |
+| 33–38 s | Corre alla porta, poi sul ballatoio fino alla **leva del generatore**: la luce torna | generatore che riparte |
+| 38–43 s | Respira. "Nessuno se n'è accorto… o almeno, così credi": due occhi si aprono un istante sotto il pontile | silenzio sospeso |
+| 43–65 s | **Notte 39**: 2:14, la radio, "non sono navi", scelta ACCESA / SPENTA | terrore |
+
+La leva del generatore è la stessa dell'ep. 2 (lì la abbassa per spegnere).
+
+- **Voce:** è stata rigenerata solo la parte nuova (234 crediti, 1 take) e unita con ffmpeg all'inizio e alla fine della voce originale → `public/il-faro/ep1-voce-v3.mp3`. Tempi parola per parola: `assets/il-faro/ep1-words-v3.json`; sottotitoli: `src/IlFaro/ep1/captions.json` (copione con colori in `src/IlFaro/ep1/script.ts`).
+- **Suoni nuovi:** `sfx-tuono.mp3` (10 crediti), `sfx-generatore.mp3` (8 crediti). Totale ep. 1 v3: **252 crediti**.
+- La voce e le parole della v2 restano in `assets/il-faro/` (`ep1-voce-v1.mp3`, `ep1-words-v1.json`).

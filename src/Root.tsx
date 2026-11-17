@@ -1,4 +1,4 @@
-import { Composition, Folder } from "remotion";
+import { Composition, Folder, Still } from "remotion";
 import { HelloWorld } from "./HelloWorld";
 import { Logo } from "./HelloWorld/Logo";
 import { Title } from "./HelloWorld/Title";
@@ -6,6 +6,7 @@ import { Showcase } from "./Showcase/Showcase";
 import { IlFaroEp1 } from "./IlFaro/Episode1";
 import { IlFaroEp1v2 } from "./IlFaro/v2/Episode1v2";
 import { IlFaroEp2 } from "./IlFaro/v2/Episode2";
+import { ChannelAvatar, ChannelBanner } from "./IlFaro/v2/ChannelArt";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -13,6 +14,8 @@ export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Folder name="IlFaro">
+        <Still id="CanaleAvatar" component={ChannelAvatar} width={800} height={800} />
+        <Still id="CanaleBanner" component={ChannelBanner} width={2560} height={1440} />
         <Composition
           id="IlFaroEp1"
           component={IlFaroEp1v2}

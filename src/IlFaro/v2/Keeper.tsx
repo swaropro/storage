@@ -12,6 +12,8 @@ export type KeeperPose = {
   readonly worried?: boolean;
   readonly scale?: number;
   readonly bob?: number; // piccolo respiro / ondeggio
+  readonly stance?: number; // gambe divaricate da fermo (gradi)
+  readonly wave?: number | null; // braccio che saluta, alzato di lato (gradi, es. -140)
 };
 
 const INK = "#14161f";
@@ -36,13 +38,15 @@ export const Keeper = ({
   worried = false,
   scale = 1,
   bob = 0,
+  stance = 0,
+  wave = null,
 }: KeeperPose) => {
   const walking = walkPhase !== null;
   const swing = walking ? Math.sin(walkPhase) * 28 : 0;
   const lift = walking ? Math.abs(Math.sin(walkPhase)) * 5 : 0;
   const hipY = sit ? -62 : -62;
-  const legA = sit ? 80 : swing;
-  const legB = sit ? 80 : -swing;
+  const legA = sit ? 80 : swing + stance;
+  const legB = sit ? 80 : -swing - stance;
   const armF = walking ? -swing * 0.8 + 6 : armFront;
   const armB = walking ? swing * 0.8 - 6 : armBack;
 
@@ -81,7 +85,7 @@ export const Keeper = ({
     <g transform={`translate(${x} ${y - lift + bob}) scale(${facing * scale} ${scale})`}>
       {/* ombra */}
       <ellipse cx={0} cy={2} rx={36} ry={6} fill="black" opacity={0.25} />
-      {arm(armB, false)}
+      {wave === null ? arm(armB, false) : null}
       {leg(legB)}
       {leg(legA)}
       {/* impermeabile */}
@@ -112,6 +116,18 @@ export const Keeper = ({
         <path d="M 9 -152 Q 14 -149 19 -152" fill="none" stroke={INK} strokeWidth={3} strokeLinecap="round" />
       )}
       {arm(armF, true)}
+      {wave !== null ? (
+        (() => {
+          const p = limb(-8, -132, 78, wave);
+          return (
+            <g>
+              <line x1={-8} y1={-132} x2={p.x2} y2={p.y2} stroke={COAT} strokeWidth={13} strokeLinecap="round" />
+              <line x1={-8} y1={-132} x2={p.x2} y2={p.y2} stroke={INK} strokeWidth={13} strokeLinecap="round" strokeOpacity={0.12} />
+              <circle cx={p.x2} cy={p.y2} r={9} fill={SKIN} stroke={INK} strokeWidth={3} />
+            </g>
+          );
+        })()
+      ) : null}
     </g>
   );
 };

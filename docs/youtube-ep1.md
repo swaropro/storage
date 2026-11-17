@@ -13,4 +13,4 @@ La risposta più votata decide come continua la storia nell'Ep.2.
 
 🔔 Iscriviti per non perdere il prossimo episodio.
 
-#ilfaro #storieinteractive #shorts #horror #mistero #suspense #storiehorror #scegliTu #animazione #storieitaliane
+#ilfaro #storieinterattive #shorts #horror #mistero #suspense #storiehorror #scegliTu #animazione #storieitaliane

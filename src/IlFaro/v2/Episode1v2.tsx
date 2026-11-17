@@ -7,8 +7,9 @@ import { Hud } from "../Hud";
 import { Bubble, Choice, Clock, Contract, FadeIn, NoPhone } from "./Overlays";
 import { Room } from "./Room";
 import { Soundtrack } from "./Soundtrack";
+import { Stairwell } from "./Stairwell";
 import { Storm } from "./Storm";
-import { EP1_END, lanternOn, N39 } from "./timeline";
+import { EP1_END, lanternOn, N39, STAIRS_FROM, STAIRS_TO } from "./timeline";
 import { World } from "./World";
 
 // IL FARO · Ep.1 "La regola" (v3): arrivo → NOTTE 12 (tempesta, la luce si spegne,
@@ -53,6 +54,11 @@ export const IlFaroEp1v2 = () => {
           </Sequence>
         </Sequence>
       </Track>
+
+      {/* stacco: dentro la torre, su per le scale (sopra l'esterno, che intanto continua) */}
+      <Sequence name="Interno: le scale" from={s(STAIRS_FROM, fps)} durationInFrames={s(STAIRS_TO - STAIRS_FROM, fps)}>
+        <Stairwell />
+      </Sequence>
 
       <Track name="Grafiche">
         <Sequence name="Contratto" from={s(7.2, fps)} durationInFrames={s(8.5, fps)}>

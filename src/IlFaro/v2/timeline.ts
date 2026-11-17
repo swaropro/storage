@@ -33,8 +33,9 @@ export const cameraKeys: readonly (readonly number[])[] = [
   [29.6, 1560, 1080, 0.8],
   [31.4, 1560, 1120, 0.74],
   [33.8, 1500, 1260, 1.05],
-  [35.2, 1660, 1260, 1.05],
-  [35.25, 1720, 780, 1.45],
+  [34.6, 1640, 1260, 1.05],
+  // 34,6–36,25: scena interna delle scale (Stairwell.tsx)
+  [36.25, 1720, 780, 1.45],
   [37.9, 1720, 780, 1.45],
   [39.2, 1660, 900, 1.0],
   [41, 1300, 1180, 0.62],
@@ -92,6 +93,9 @@ export const flashAmount = (t: number) =>
 
 // --- La lanterna: trema, si spegne col fulmine, torna dopo la leva
 export const LEVER_UP_AT = 36.8;
+// scena interna: le scale della torre
+export const STAIRS_FROM = 34.6;
+export const STAIRS_TO = 36.25;
 export const lanternOn = (t: number) => {
   if (t >= 29.8 && t < 31.2) return Math.sin(t * 70) * Math.sin(t * 23) > -0.2;
   if (t >= 31.2 && t < 37.25) return false;
@@ -139,13 +143,13 @@ export const keeperOutside = (t: number) => {
     return { x: 1460, y: BASE_Y, facing: 1 as const, walkPhase: null, worried: t > 29.8, armFront: shock ? 70 : 8, armBack: shock ? 45 : -8, stance: 8 };
   }
   // corre verso la porta
-  if (t < 35.15) {
-    return { x: interpolate(t, [33.85, 35.1], [1460, 1690], clamp), y: BASE_Y, facing: 1 as const, walkPhase: t * 15, worried: true };
+  if (t < STAIRS_FROM) {
+    return { x: interpolate(t, [33.85, STAIRS_FROM], [1460, 1700], clamp), y: BASE_Y, facing: 1 as const, walkPhase: t * 15, worried: true };
   }
-  if (t < 35.25) return null;
-  // sul ballatoio: corre alla leva
-  if (t < 36.4) {
-    return { x: interpolate(t, [35.25, 36.35], [1560, 1805], clamp), y: GALLERY_Y, facing: 1 as const, walkPhase: t * 15, worried: true };
+  if (t < STAIRS_TO) return null; // dentro la torre: scena delle scale
+  // sbuca sul ballatoio e corre alla leva
+  if (t < 36.65) {
+    return { x: interpolate(t, [STAIRS_TO, 36.6], [1660, 1805], clamp), y: GALLERY_Y, facing: 1 as const, walkPhase: t * 15, worried: true };
   }
   // tira la leva (la mano sale con la leva)
   if (t < 39.1) {
